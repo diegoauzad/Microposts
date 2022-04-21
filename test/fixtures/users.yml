@@ -7,25 +7,42 @@ diego:
   email: diego@auza.com
   password_digest: <%= User.digest('sample-password') %>
   admin: true
+  activated: true
+  activated_at: <%= Time.zone.now %>
+
+inactive:
+  name: Inactive User
+  email: inactive@example.com
+  password_digest: <%= User.digest('sample-password') %>
+  admin: false
+  activated: false
 
 john:
   name: John Doe
   email: john@doe.com
   password_digest: <%= User.digest('sample-password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 lana:
   name: Lana Kane
   email: hands@example.gob.bo
   password_digest: <%= User.digest('sample-password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
 jim:
   name: Jim Morris
   email: jim-morris.1@example.app
   password_digest: <%= User.digest('sample-password') %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
 
-<% 30.times do |n| %>
+  <% 30.times do |n| %>
 user_<%= n %>:
   name: <%= "User #{n}" %>
   email: <%= "user-#{n}@example.com" %>
   password_digest: <%= User.digest('sample-password') %>
-<% end %>
+  activated: true
+  activated_at: <%= Time.zone.now %>
+  <% end %>
